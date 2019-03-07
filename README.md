@@ -1,1 +1,1 @@
-# Grupo 2 Nuevas Técnicas
+# Grupo 2 Proyecto Nuevas Técnicas
