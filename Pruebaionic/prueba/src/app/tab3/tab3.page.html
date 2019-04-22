@@ -6,4 +6,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content padding>
+  <h1>DATOS BASE DE DATOS</h1>
+  <ion-list>
+    <button ion-item *ngFor="let rutina of rutinas">
+      {{rutina.id}} - {{rutina.nombre}} <br>
+      <button ion-item></button>
+       {{rutina.descripcion}}
+    </button>
+  </ion-list>
+</ion-content>
