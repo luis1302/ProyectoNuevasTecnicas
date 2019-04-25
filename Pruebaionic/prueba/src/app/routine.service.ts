@@ -14,7 +14,7 @@ export class RoutineService {
 
   obtenerRutinas(){
     console.log("entra a la pagina");
-    return this.http.get('http://127.0.0.1:8000/api/rutinas');
+    return this.http.get('http://127.0.0.1:8000/api/rutina');
     console.log("entra a la pagina");
   }
 }

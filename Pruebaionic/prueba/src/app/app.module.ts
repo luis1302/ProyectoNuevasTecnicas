@@ -14,6 +14,8 @@ import {HttpModule} from '@angular/http';
 import { RoutineService } from './routine.service';
 import { HttpClientModule,HttpClient } from '@angular/common/http';
 
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +25,8 @@ import { HttpClientModule,HttpClient } from '@angular/common/http';
     StatusBar,
     RoutineService,
     SplashScreen,
+    Geolocation,
+    NativeGeocoder,
     GolpeService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

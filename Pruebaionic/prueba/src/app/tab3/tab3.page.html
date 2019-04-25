@@ -3,8 +3,13 @@
     <ion-title>
       Tab Three
     </ion-title>
+
   </ion-toolbar>
 </ion-header>
+<ion-button (click)="loadMap()" shape="round" fill="outline">
+        <ion-icon slot="start" name="locate"></ion-icon>
+        Mi gimnasio Carlangas
+</ion-button>
 
 <ion-content padding>
   <h1>DATOS BASE DE DATOS</h1>
@@ -15,4 +20,10 @@
        {{rutina.descripcion}}
     </button>
   </ion-list>
+
+  <div  id="map"></div>
+
+
+
+
 </ion-content>
