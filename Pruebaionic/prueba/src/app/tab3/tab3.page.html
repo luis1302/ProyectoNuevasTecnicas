@@ -6,18 +6,19 @@
 
   </ion-toolbar>
 </ion-header>
+
 <ion-button (click)="loadMap()" shape="round" fill="outline">
         <ion-icon slot="start" name="locate"></ion-icon>
-        Mi gimnasio Carlangas
+        Mi ubicacion Carlangas
 </ion-button>
 
 <ion-content padding>
   <h1>DATOS BASE DE DATOS</h1>
   <ion-list>
     <button ion-item *ngFor="let rutina of rutinas">
-      {{rutina.id}} - {{rutina.nombre}} <br>
+      {{rutina.id}} - {{rutina.id}} <br>
       <button ion-item></button>
-       {{rutina.descripcion}}
+       {{rutina.id}}-{{rutina.descripcion}}
     </button>
   </ion-list>
 

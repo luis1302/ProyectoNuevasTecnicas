@@ -13,4 +13,9 @@ class apirutinas extends Controller
     {
       return routine::all();
     }
+
+    public function show($param)
+    {
+      return routine::where('tipo',$param)->get();
+    }
 }

@@ -16,7 +16,8 @@ class CreateRoutines extends Migration
         Schema::create('routines', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('nombre');
+            $table->string('tipo');
+            $table->double('edad');
             $table->string('descripcion');
         });
     }

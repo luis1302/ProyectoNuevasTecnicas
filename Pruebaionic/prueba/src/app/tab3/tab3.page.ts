@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import{RoutineService} from '../routine.service';
 
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
+import { NativeGeocoder, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
 import { LoadingController } from '@ionic/angular';
+import { createTokenForExternalReference } from '@angular/compiler/src/identifiers';
 
 declare var google;
 
@@ -16,17 +17,23 @@ declare var google;
 
 export class Tab3Page implements OnInit {
   mapRef = null;
+  tipo=this.creaF();
 
 
   rutinas
   constructor(public servicio:RoutineService,private geolocation: Geolocation,private nativeGeocoder: NativeGeocoder, private loadCtrl:LoadingController ){
-    this.servicio.obtenerRutinas()
+    this.servicio.obtenerRutinas(this.tipo)
     .subscribe(
       (data)=>{this.rutinas=data;
       console.log("entro bien");},
       (error)=>{console.log("no funca bien esto");}
     )
 
+  }
+
+  public creaF(){
+    var ti="Piernas";
+    return ti;
   }
 
   ngOnInit() {
@@ -45,7 +52,7 @@ export class Tab3Page implements OnInit {
     const mapEle: HTMLElement = document.getElementById('map');
     this.mapRef = new google.maps.Map(mapEle,{
       center: myLatLng,
-      zoom: 12
+      zoom: 15
     });
     google.maps.event.addListenerOnce(this.mapRef,'idle', () => {
       console.log('listener para ver si identific que ya inicio');
@@ -62,7 +69,7 @@ export class Tab3Page implements OnInit {
         lat,
         lng
       },
-      zoom: 8,
+      zoom: 15,
       map: this.mapRef,
       title: 'Hola Carlangas'
     });
